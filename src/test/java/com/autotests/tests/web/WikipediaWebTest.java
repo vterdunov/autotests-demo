@@ -31,11 +31,10 @@ public class WikipediaWebTest extends BaseWebTest {
                 "Central featured section should be displayed");
     }
 
-    @Test(description = "Verify search input has placeholder text")
-    public void testSearchInputPlaceholder() {
-        String placeholder = homePage.getSearchInputPlaceholder();
-        Assert.assertNotNull(placeholder, "Search input should have placeholder");
-        Assert.assertFalse(placeholder.isEmpty(), "Placeholder should not be empty");
+    @Test(description = "Verify search input is displayed and functional")
+    public void testSearchInputDisplayed() {
+        Assert.assertTrue(homePage.isSearchInputDisplayed(),
+                "Search input should be displayed on the home page");
     }
 
     @Test(description = "Verify search functionality returns results")

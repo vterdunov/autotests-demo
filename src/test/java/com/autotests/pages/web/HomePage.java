@@ -35,6 +35,10 @@ public class HomePage extends BasePage {
         return isDisplayed(wikipediaLogo);
     }
 
+    public boolean isSearchInputDisplayed() {
+        return isDisplayed(searchInput);
+    }
+
     public void enterSearchQuery(String query) {
         sendKeys(searchInput, query);
     }

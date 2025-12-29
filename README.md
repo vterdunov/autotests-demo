@@ -24,6 +24,8 @@ autotests-demo/
         └── config.properties        # Конфигурация тестов
 ```
 
+![Autotests](docs/autests.jpg)
+
 ## Требования
 
 ### Общие

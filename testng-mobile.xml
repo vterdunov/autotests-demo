@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Wikipedia Mobile Tests" parallel="false" verbose="2">
+
+    <test name="Mobile Tests">
+        <classes>
+            <class name="com.autotests.tests.mobile.WikipediaMobileTest"/>
+        </classes>
+    </test>
+
+</suite>

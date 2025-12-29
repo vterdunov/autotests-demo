@@ -1,5 +1,6 @@
 package com.autotests.tests.web;
 
+import com.autotests.core.ConfigReader;
 import com.autotests.pages.web.ArticlePage;
 import com.autotests.pages.web.HomePage;
 import com.autotests.pages.web.SearchResultsPage;
@@ -14,7 +15,7 @@ public class WikipediaWebTest extends BaseWebTest {
 
     @BeforeMethod
     public void initPage() {
-        driver.get("https://www.wikipedia.org");
+        driver.get(ConfigReader.getProperty("web.base.url", "https://www.wikipedia.org"));
         homePage = new HomePage(driver);
     }
 

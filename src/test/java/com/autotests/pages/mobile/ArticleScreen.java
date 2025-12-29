@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -37,13 +38,17 @@ public class ArticleScreen extends BaseScreen {
     }
 
     public boolean isArticleWebViewDisplayed() {
-        waitSeconds(3);
-        return isElementDisplayed(articleWebView);
+        try {
+            wait.until(ExpectedConditions.visibilityOf(articleWebView));
+            return articleWebView.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public String getArticleTitle() {
-        waitSeconds(2);
         try {
+            wait.until(ExpectedConditions.visibilityOf(articleTitleView));
             return getElementText(articleTitleView);
         } catch (Exception e) {
             return "";

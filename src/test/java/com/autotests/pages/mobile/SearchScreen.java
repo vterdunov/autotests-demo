@@ -39,8 +39,7 @@ public class SearchScreen extends BaseScreen {
     }
 
     public boolean hasSearchResults() {
-        waitSeconds(2);
-        return !searchResultItems.isEmpty();
+        return waitForListNotEmpty(searchResultItems, 5);
     }
 
     public int getResultsCount() {

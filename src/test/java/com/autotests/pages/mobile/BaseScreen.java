@@ -54,11 +54,24 @@ public abstract class BaseScreen {
         }
     }
 
-    protected void waitSeconds(int seconds) {
+    protected void waitForElementsPresence(int timeoutSeconds) {
         try {
-            Thread.sleep(seconds * 1000L);
+            Thread.sleep(timeoutSeconds * 100L);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+    }
+
+    protected boolean waitForListNotEmpty(java.util.List<WebElement> elements, int timeoutSeconds) {
+        int attempts = 0;
+        int maxAttempts = timeoutSeconds * 2;
+        while (attempts < maxAttempts) {
+            if (!elements.isEmpty()) {
+                return true;
+            }
+            waitForElementsPresence(5);
+            attempts++;
+        }
+        return !elements.isEmpty();
     }
 }

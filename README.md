@@ -47,7 +47,7 @@ autotests-demo/
 ### 1. Клонирование репозитория
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/vterdunov/autotests-demo.git
 cd autotests-demo
 ```
 
